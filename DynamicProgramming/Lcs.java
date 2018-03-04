@@ -4,7 +4,7 @@ public class Lcs {
     {
         Scanner in = new Scanner(System.in);
         String s1 = "AGGTAB";
-        String s2 = "GXTXAYB";
+        String s2 = "XYZW";
         char A[]=s1.toCharArray();
         char B[]=s2.toCharArray();
         int m = s1.length();
