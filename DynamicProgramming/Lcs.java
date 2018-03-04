@@ -4,13 +4,13 @@ public class Lcs {
     {
         Scanner in = new Scanner(System.in);
         String s1 = "AGGTAB";
-        String s2 = "XYZW";
+        String s2 = "bibhash";
         char A[]=s1.toCharArray();
         char B[]=s2.toCharArray();
         int m = s1.length();
         int n= s2.length();
         Lcs lcs = new Lcs();
-        System.out.println(lcs.find_using_dp(A,B,m,n));
+        System.out.print(lcs.find_using_dp(A,B,m,n));
     }
     public int find(char A[], char B[], int m,int n)
     {
