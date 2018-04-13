@@ -1,0 +1,34 @@
+package string;
+
+public class SubString {
+	
+	//searching a substring by Brute-force
+	public static void main(String[] args) {
+		
+		String s = "bibhashkumar is great";
+		String subStr ="kumar";
+		
+		int result = getIndex(s, subStr);
+		System.out.println(result == 0 ?"subStr not found " : "SubString starting index is -> " +result);
+		
+		
+	}
+
+	private static int getIndex(String s, String subStr) {
+		
+		for(int i = 0; i<s.length()-subStr.length();i++) {
+			
+			if(s.charAt(i) == subStr.charAt(0)) {
+				
+				for(int j = i,k=0;j<subStr.length();j++,k++) {
+					if(s.charAt(j)!=subStr.charAt(k) )
+						break;
+				}
+				return i+1;
+			}
+			
+		}
+		return 0;
+	}
+
+}
