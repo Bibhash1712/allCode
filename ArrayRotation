@@ -1,1 +1,70 @@
+package array;
 
+import java.util.Scanner;
+
+public class ArrayRotation {
+	
+	static Scanner scan = new Scanner(System.in);
+	
+	public static void main(String[] args) {
+		
+		int arr[] = new int[] { 1,2,3,4,5,6,7,8};
+		System.out.println("Enter the no. of elements to rotate");
+		int n = scan.nextInt();
+		//arr = rotateArray(arr, n);
+		leftRotate(arr, n);
+		printArray(arr);
+	}
+
+	static void printArray(int arr[]) 
+    {
+        int i;
+        for (i = 0; i < arr.length; i++)
+            System.out.print(arr[i] + " ");
+    }
+	
+	public static int[] rotateArray(int[] arr, int n) {
+		//rotate array by n positions
+		
+		int temp,j;
+		for (int i = 0; i < n; i++) {
+			temp = arr[0];
+			for (j= 0 ; j < arr.length-1; j++ ) {
+				arr[j]  = arr[j+1];
+			}
+			arr[j]=temp;
+		}
+		return arr;
+	}
+	
+	public static int[] rotateArray2(int[] arr) {
+		//rotate array by n positions
+	//	int n = scan.nextInt();
+		
+		//use gacd solution in method 3 for O(n) time complexity.
+		
+		return arr;
+	}
+
+	static void leftRotate(int arr[], int d)
+    {
+        int n = arr.length;
+        rvereseArray(arr, 0, d-1);
+        rvereseArray(arr, d, n-1);
+        rvereseArray(arr, 0, n-1);
+    }
+ 
+    /*Function to reverse arr[] from index start to end*/
+    static void rvereseArray(int arr[], int start, int end)
+    {
+        int temp;
+        while (start < end)
+        {
+            temp = arr[start];
+            arr[start] = arr[end];
+            arr[end] = temp;
+            start++;
+            end--;
+        }
+    }
+}
